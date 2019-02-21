@@ -24,10 +24,9 @@ export class Counter extends Component {
     }
 
     evaluateClass = () => {
-        const existingClass = "badge badge-"
         return this.state.value > 0
-            ? existingClass + "primary"
-            : existingClass + "warning"
+            ? "primary"
+            : "warning"
 
     }
 
@@ -35,7 +34,7 @@ export class Counter extends Component {
         return (
             <React.Fragment>
                 <h2>
-                    <span className={this.evaluateClass()}>{this.state.value}</span>
+                    <span className={`badge badge-${this.evaluateClass()}`}>{this.state.value}</span>
                 </h2>
                 <button
                     type="button"
