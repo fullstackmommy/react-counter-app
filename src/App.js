@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Counter} from './components/Counter/Counter'
+import {Counters} from './components/Counters/Counters.jsx'
 
 export class App extends Component {
   render() {
@@ -7,7 +7,7 @@ export class App extends Component {
       <React.Fragment>
         <h1>Counter
         </h1>
-        <Counter/>
+        <Counters/>
       </React.Fragment>
     )
   }

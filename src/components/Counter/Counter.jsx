@@ -2,8 +2,8 @@ import React, {Component} from 'react'
 
 export class Counter extends Component {
     state = {
-        id: 1,
-        value: 0
+        id: this.props.id,
+        value: this.props.value
     };
 
     // use arrow function when creating event handler, to avoid the need to bind
@@ -44,7 +44,10 @@ export class Counter extends Component {
                     type="button"
                     className="btn btn-warning m-2"
                     onClick={this.handleClickDown}>-</button>
+                <button></button>
             </React.Fragment>
         )
     };
 }
+
+export default Counter
