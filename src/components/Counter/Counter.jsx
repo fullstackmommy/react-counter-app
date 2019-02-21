@@ -1,8 +1,17 @@
 import React from 'react'
 
 export default function Counter(props) {
+    const {
+        value,
+        id,
+        handleClickUp,
+        handleClickDown,
+        handleDelete,
+        handleReset
+    } = props;
+
     const evaluateClass = () => {
-        return props.value > 0
+        return value > 0
             ? "primary"
             : "warning"
     }
@@ -10,23 +19,21 @@ export default function Counter(props) {
     return (
         <React.Fragment>
             <h2>
-                <span className={`badge badge-${evaluateClass()} m-2`}>{props.value}</span>
+                <span className={`badge badge-${evaluateClass()} m-2`}>{value}</span>
             </h2>
             <button
                 type="button"
                 className="btn btn-primary m-2"
-                onClick={() => props.handleClickUp(props.id)}>+</button>
+                onClick={() => handleClickUp(id)}>+</button>
             <button
                 type="button"
                 className="btn btn-warning m-2"
-                onClick={() => props.handleClickDown(props.id)}>-</button>
+                onClick={() => handleClickDown(id)}>-</button>
             <button
                 type="button"
                 className="btn btn-secondary m-2"
-                onClick={() => props.handleReset(props.id)}>Reset</button>
-            <button
-                className="btn btn-secondary"
-                onClick={() => props.handleDelete(props.id)}>Delete</button>
+                onClick={() => handleReset(props.id)}>Reset</button>
+            <button className="btn btn-secondary" onClick={() => handleDelete(props.id)}>Delete</button>
         </React.Fragment>
     )
 }

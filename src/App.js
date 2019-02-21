@@ -49,20 +49,18 @@ export class App extends Component {
   }
 
   render() {
-    const countnumCounter = this.state.data.length;
-    const totalCount = this
-      .state
-      .data
-      .reduce((acc, element) => {
-        return acc + element.value;
-      }, 0)
+    const {data} = this.state;
+    const countnumCounter = data.length;
+    const totalCount = data.reduce((acc, element) => {
+      return acc + element.value;
+    }, 0)
 
     return (
       <div className="container">
         <h1>Counter
         </h1>
         <Counters
-          data={this.state.data}
+          data={data}
           handleClickUp={this.handleClickUp}
           handleClickDown={this.handleClickDown}
           handleDelete={this.handleDelete}
