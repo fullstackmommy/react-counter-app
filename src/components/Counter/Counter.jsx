@@ -44,7 +44,9 @@ export class Counter extends Component {
                     type="button"
                     className="btn btn-warning m-2"
                     onClick={this.handleClickDown}>-</button>
-                <button></button>
+                <button
+                    className="btn btn-secondary"
+                    onClick={() => this.props.handleDelete(this.state.id)}>Delete</button>
             </React.Fragment>
         )
     };
