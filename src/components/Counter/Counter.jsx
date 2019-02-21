@@ -30,11 +30,15 @@ export class Counter extends Component {
 
     }
 
+    handleReset = () => {
+        this.setState({value: 0});
+    }
+
     render() {
         return (
             <React.Fragment>
                 <h2>
-                    <span className={`badge badge-${this.evaluateClass()}`}>{this.state.value}</span>
+                    <span className={`badge badge-${this.evaluateClass()} m-2`}>{this.state.value}</span>
                 </h2>
                 <button
                     type="button"
@@ -44,6 +48,8 @@ export class Counter extends Component {
                     type="button"
                     className="btn btn-warning m-2"
                     onClick={this.handleClickDown}>-</button>
+                <button type="button" className="btn btn-info m-2" onClick={this.handleReset}>Reset
+                </button>
                 <button
                     className="btn btn-secondary"
                     onClick={() => this.props.handleDelete(this.state.id)}>Delete</button>
