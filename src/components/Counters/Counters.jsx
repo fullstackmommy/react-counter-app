@@ -18,16 +18,17 @@ export class Counters extends Component {
 
     render() {
         const {data} = this.state;
+
         return (
             <div>
+                {data.length === 0 && <h2>No more counters</h2>}
                 {data.map(counter => (<Counter
                     key={counter.id}
                     id={counter.id}
                     value={counter.value}
-                    handleDelete={this.handleDelete}/>))}
+                    handleDelete={this.handleDelete}/>))
+}
             </div>
         )
     }
 }
-
-export default Counters
