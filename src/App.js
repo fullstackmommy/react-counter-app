@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Counters} from './components/Counters/Counters'
+import Counters from './components/Counters/Counters'
 import Total from './components/Total/Total'
 import {counters} from './sampleData.js'
 
